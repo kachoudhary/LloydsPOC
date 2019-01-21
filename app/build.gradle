@@ -20,9 +20,9 @@ android {
 def butterknifeVersion = "8.4.0"
 
 def retrofitVersion = "2.2.0"
-def rxJavaVersion = "2.1.0"
-def rxAndroidVersion = "2.0.1"
-def daggerVersion = "2.11"
+def rxJavaVersion = "2.2.5"
+def rxAndroidVersion = "2.1.0"
+def daggerVersion = "2.21"
 def glideVersion = "3.8.0"
 
 dependencies {
