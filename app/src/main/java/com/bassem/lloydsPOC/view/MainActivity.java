@@ -9,14 +9,11 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.KeyEvent;
+import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.controller.MainPagerAdapter;
 import com.bassem.lloydsPOC.models.Album;
@@ -26,25 +23,27 @@ import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsFragment;
 import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsFragment;
 import com.bassem.lloydsPOC.view.toptrackslisting.TopTracksFragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnEditorAction;
 
-public class MainActivity extends AppCompatActivity implements TopArtistsFragment.OnFragmentInteractionListener, TopAlbumsFragment.OnFragmentInteractionListener, TopTracksFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements
+        TopArtistsFragment.OnFragmentInteractionListener,
+        TopAlbumsFragment.OnFragmentInteractionListener,
+        TopTracksFragment.OnFragmentInteractionListener,
+        View.OnClickListener{
 
-    @BindView(R.id.tl_main)
-    TabLayout mTabLayout;
-    @BindView(R.id.vp_main)
-    ViewPager mViewPager;
-    MainPagerAdapter mAdapter;
-    @BindView(R.id.edt_search)
-    EditText searchEditText;
+
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
+    private MainPagerAdapter mAdapter;
+    private EditText searchEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        mTabLayout=findViewById(R.id.tl_main);
+        mViewPager=findViewById(R.id.vp_main);
+        searchEditText=findViewById(R.id.edt_search);
+        searchEditText.setOnClickListener(this::onClick);
         looseSearchEditTextFocus();
         initializeFragments();
     }
@@ -57,20 +56,6 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
-    @OnEditorAction(R.id.edt_search)
-    boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-            if (isValidSearch(v.getText().toString())) {
-                searchUser(v.getText().toString());
-            } else {
-                showEnterValidUserNameToast();
-            }
-            looseSearchEditTextFocus();
-            return true;
-        }
-        return false;
-    }
-
     private void showEnterValidUserNameToast() {
         Toast.makeText(this, R.string.please_enter_a_user_name, Toast.LENGTH_SHORT).show();
     }
@@ -81,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         return true;
     }
 
-    // loops the base fragments and notify them to search with the given userName
     private void searchUser(String userName) {
         for (Fragment fr : mAdapter.getFragments()
                 ) {
@@ -89,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
                 ((BaseFragment) fr).searchUserName(userName);
             }
         }
-
     }
 
 
@@ -120,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         }
     }
 
-    // hide keyboard after search
     private void looseSearchEditTextFocus() {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         searchEditText.clearFocus();
@@ -130,4 +112,17 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
 
         }
     }
+
+    @Override
+    public void onClick(View v) {
+       if (v.getId()==R.id.edt_search) {
+           if (isValidSearch(searchEditText.getText().toString())) {
+               searchUser(searchEditText.getText().toString());
+           } else {
+               showEnterValidUserNameToast();
+           }
+           looseSearchEditTextFocus();
+       }
+    }
+
 }
