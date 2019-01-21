@@ -20,4 +20,13 @@
     <style name="ALbumTitleTextStyle">
         <item name="android:textSize">@dimen/titleTextSize</item>
     </style>
+
+    <style name="GreenTheme" parent="FirebaseUI">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
 </resources>
