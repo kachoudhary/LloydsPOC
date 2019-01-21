@@ -4,14 +4,11 @@ import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
 import android.view.ViewGroup;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsFragment;
 import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsFragment;
 import com.bassem.lloydsPOC.view.toptrackslisting.TopTracksFragment;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -65,7 +62,6 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
                 return topArtistsTitle;
             }
             case TOP_ALBUMS_INDEX: {
-
                 return topAlbumsTitle;
             }
             case TOP_TRACKS_INDEX: {

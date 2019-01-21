@@ -1,23 +1,19 @@
 package com.bassem.lloydsPOC.controller;
 
 import android.content.Context;
+
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.models.Track;
 import com.bassem.lloydsPOC.utils.DurationConverter;
 import com.bassem.lloydsPOC.utils.ImageLoader;
-
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class TopTracksAdapter extends RecyclerView.Adapter<TopTracksAdapter.ViewHolder> {
     List<Track> mDataset;
@@ -71,27 +67,29 @@ public class TopTracksAdapter extends RecyclerView.Adapter<TopTracksAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.img_track)
-        ImageView trackImageView;
-        @BindView(R.id.txt_track_name)
-        TextView nameTextView;
-        @BindView(R.id.txt_plays)
-        TextView playCountTextView;
-        @BindView(R.id.txt_track_artist)
-        TextView artistTextView;
-        @BindView(R.id.txt_duration)
-        TextView durationTextView;
 
+        private ImageView trackImageView;
+        private TextView nameTextView;
+        private TextView playCountTextView;
+        private TextView artistTextView;
+        private TextView durationTextView;
+        private CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-        @OnClick(R.id.cv_track_item)
-        void onTrackClicked(View view) {
-            if (mOnItemClickListener != null) {
-                mOnItemClickListener.onClick(view);
-            }
+            trackImageView=itemView.findViewById(R.id.img_track);
+            nameTextView=itemView.findViewById(R.id.txt_track_name);
+            playCountTextView=itemView.findViewById(R.id.txt_plays);
+            artistTextView=itemView.findViewById(R.id.txt_track_artist);
+            durationTextView=itemView.findViewById(R.id.txt_duration);
+            cardView=itemView.findViewById(R.id.cv_track_item);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mOnItemClickListener != null) {
+                        mOnItemClickListener.onClick(v);
+                    }
+                }
+            });
         }
     }
 }

@@ -1,22 +1,17 @@
 package com.bassem.lloydsPOC.controller;
 
 import android.content.Context;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.models.Artist;
 import com.bassem.lloydsPOC.utils.ImageLoader;
-
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 
 public class TopArtistsAdapter extends RecyclerView.Adapter<TopArtistsAdapter.ViewHolder> {
@@ -70,23 +65,24 @@ public class TopArtistsAdapter extends RecyclerView.Adapter<TopArtistsAdapter.Vi
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.img_artist)
-        ImageView artistImageView;
-        @BindView(R.id.txt_artist_name)
-        TextView artistTextView;
-        @BindView(R.id.txt_plays)
-        TextView numberOfPlaysTextView;
-
+        private ImageView artistImageView;
+        private TextView artistTextView;
+        private TextView numberOfPlaysTextView;
+        private CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-        @OnClick(R.id.cv_artist_item)
-        void onItemClicked(View view) {
-            if (mOnClickListener != null) {
-                mOnClickListener.onClick(view);
-            }
+            artistImageView=itemView.findViewById(R.id.img_artist);
+            artistTextView=itemView.findViewById(R.id.txt_artist_name);
+            numberOfPlaysTextView=itemView.findViewById(R.id.txt_plays);
+            cardView=itemView.findViewById(R.id.cv_artist_item);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mOnClickListener != null) {
+                        mOnClickListener.onClick(v);
+                    }
+                }
+            });
         }
     }
 

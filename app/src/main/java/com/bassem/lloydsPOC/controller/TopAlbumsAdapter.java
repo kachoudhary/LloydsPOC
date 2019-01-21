@@ -1,23 +1,17 @@
 package com.bassem.lloydsPOC.controller;
 
 import android.content.Context;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.models.Album;
 import com.bassem.lloydsPOC.utils.ImageLoader;
-
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 
 public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.ViewHolder> {
     List<Album> mDataset;
@@ -70,25 +64,27 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.img_album)
-        ImageView albumImageView;
-        @BindView(R.id.txt_album_artist)
-        TextView artistTextView;
-        @BindView(R.id.txt_album_name)
-        TextView nameTextView;
-        @BindView(R.id.txt_plays)
-        TextView playCountTextView;
+        private ImageView albumImageView;
+        private TextView artistTextView;
+        private TextView nameTextView;
+        private TextView playCountTextView;
+        private CardView cardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-        @OnClick(R.id.cv_album_item)
-        void onItemClicked(View view) {
-            if (mOnItemClickListener != null) {
-                mOnItemClickListener.onClick(view);
-            }
+            albumImageView=itemView.findViewById(R.id.img_album);
+            artistTextView=itemView.findViewById(R.id.txt_album_artist);
+            nameTextView=itemView.findViewById(R.id.txt_album_name);
+            playCountTextView=itemView.findViewById(R.id.txt_plays);
+            cardView=itemView.findViewById(R.id.cv_album_item);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mOnItemClickListener != null) {
+                        mOnItemClickListener.onClick(v);
+                    }
+                }
+            });
         }
     }
 }
