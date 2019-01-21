@@ -6,9 +6,6 @@ import com.bassem.lloydsPOC.network.TopTracksService;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
 
 public class TopTracksInteractorImpl implements TopTracksInteractor {
     Retrofit mRetrofit;

@@ -1,8 +1,5 @@
 package com.bassem.lloydsPOC.ui.topartistslisting;
 
-/**
- * Created by Bassem Samy on 6/16/2017.
- */
 
 public interface TopArtistsPresenter {
     void onDestroy();

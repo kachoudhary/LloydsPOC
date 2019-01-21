@@ -2,9 +2,6 @@ package com.bassem.lloydsPOC.models;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
 
 public class TopTracksResponse {
     @SerializedName("toptracks")

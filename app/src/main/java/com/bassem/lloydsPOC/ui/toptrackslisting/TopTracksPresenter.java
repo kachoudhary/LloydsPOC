@@ -1,8 +1,5 @@
 package com.bassem.lloydsPOC.ui.toptrackslisting;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
 
 public interface TopTracksPresenter  {
     void onDestroy();

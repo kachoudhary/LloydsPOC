@@ -19,10 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
-
 public class TopTracksAdapter extends RecyclerView.Adapter<TopTracksAdapter.ViewHolder> {
     List<Track> mDataset;
     Context mContext;

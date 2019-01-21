@@ -17,9 +17,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
+
 @Module
 public class TopTracksModule {
     TopTracksView mView;

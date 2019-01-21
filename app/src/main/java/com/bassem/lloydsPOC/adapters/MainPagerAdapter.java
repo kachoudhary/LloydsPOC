@@ -16,10 +16,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-/**
- * Created by Bassem Samy on 6/15/2017.
- */
-
 public class MainPagerAdapter extends FragmentPagerAdapter {
     private static final int NUMBER_OF_ITEMS = 3;
     private static final int TOP_ARTISTS_INDEX = 0;

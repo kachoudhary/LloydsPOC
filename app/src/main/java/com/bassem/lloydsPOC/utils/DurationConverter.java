@@ -1,9 +1,5 @@
 package com.bassem.lloydsPOC.utils;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
-
 public class DurationConverter {
     private static final String SEPARATOR = ":";
     private static final String DEFAULT_VALUE = "0:0";

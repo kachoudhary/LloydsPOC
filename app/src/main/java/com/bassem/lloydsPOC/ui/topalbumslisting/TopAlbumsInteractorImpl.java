@@ -6,10 +6,6 @@ import com.bassem.lloydsPOC.network.TopAlbumsService;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 
-/**
- * Created by Bassem Samy on 6/16/2017.
- */
-
 public class TopAlbumsInteractorImpl implements TopAlbumsInteractor {
     Retrofit mRetrofit;
 

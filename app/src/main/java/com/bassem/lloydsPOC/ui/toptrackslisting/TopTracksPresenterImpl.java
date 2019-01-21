@@ -13,9 +13,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
 
 public class TopTracksPresenterImpl implements TopTracksPresenter {
     Disposable mDisposable;

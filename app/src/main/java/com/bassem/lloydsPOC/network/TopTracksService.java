@@ -6,9 +6,6 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-/**
- * Created by Bassem Samy on 6/17/2017.
- */
 
 public interface TopTracksService {
     @GET("?method=user.gettoptracks&format=json")

@@ -26,9 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * A simple Fragment that displays top albums for user
- */
+
 public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
     @BindView(R.id.rclr_albums)
     RecyclerView albumsRecyclerView;
