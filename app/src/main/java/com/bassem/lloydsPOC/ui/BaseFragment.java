@@ -1,6 +1,6 @@
 package com.bassem.lloydsPOC.ui;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by Bassem Samy on 6/15/2017.
