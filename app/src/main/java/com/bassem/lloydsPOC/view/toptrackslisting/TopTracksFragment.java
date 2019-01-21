@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.controller.TopTracksAdapter;
 import com.bassem.lloydsPOC.models.Track;
@@ -17,41 +16,35 @@ import com.bassem.lloydsPOC.view.BaseFragment;
 import com.bassem.lloydsPOC.view.toptrackslisting.di.DaggerTopTracksComponent;
 import com.bassem.lloydsPOC.view.toptrackslisting.di.TopTracksModule;
 import com.bassem.lloydsPOC.utils.Constants;
-
 import java.util.List;
-
 import javax.inject.Inject;
-
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
-/**
- * A simple Fragment that displays top tracks
- */
 public class TopTracksFragment extends BaseFragment implements TopTracksView {
+
     private OnFragmentInteractionListener mListener;
-    @BindView(R.id.rclr_tracks)
-    RecyclerView tracksRecyclerView;
-    @BindView(R.id.prgrs_main)
-    ProgressBar mainProgressBar;
-    @BindView(R.id.empty_layout)
-    View emptyLayout;
+    private RecyclerView tracksRecyclerView;
+    private ProgressBar mainProgressBar;
+    private View emptyLayout;
+
     @Inject
     TopTracksPresenter mPresenter;
     TopTracksAdapter mAdapter;
 
-    public TopTracksFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     */
     public static TopTracksFragment newInstance() {
         TopTracksFragment fragment = new TopTracksFragment();
         return fragment;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_top_tracks, container, false);
+        tracksRecyclerView=view.findViewById(R.id.rclr_tracks);
+        mainProgressBar=view.findViewById(R.id.prgrs_main);
+        emptyLayout =view.findViewById(R.id.empty_layout);
+        return view;
     }
 
     @Override
@@ -64,15 +57,6 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mPresenter.getTopTracks(Constants.DEFAULT_LASTFM_USER, Constants.TOP_ITEMS_LIMIT, Constants.API_KEY);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_top_tracks, container, false);
-        ButterKnife.bind(this, view);
-        return view;
     }
 
     @Override
@@ -139,12 +123,6 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
 
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     */
     public interface OnFragmentInteractionListener {
         void onTrackClicked(Track track);
     }

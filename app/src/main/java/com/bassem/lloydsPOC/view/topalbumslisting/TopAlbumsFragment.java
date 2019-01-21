@@ -17,39 +17,32 @@ import com.bassem.lloydsPOC.view.BaseFragment;
 import com.bassem.lloydsPOC.view.topalbumslisting.di.DaggerTopAlbumsComponent;
 import com.bassem.lloydsPOC.view.topalbumslisting.di.TopAlbumsModule;
 import com.bassem.lloydsPOC.utils.Constants;
-
 import java.util.List;
-
 import javax.inject.Inject;
-
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
+
 
 
 public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
-    @BindView(R.id.rclr_albums)
-    RecyclerView albumsRecyclerView;
-    @BindView(R.id.prgrs_main)
-    ProgressBar mainprogressBar;
-    @BindView(R.id.empty_layout)
-    View emptyLayout;
+
+
+    private RecyclerView albumsRecyclerView;
+    private ProgressBar mainprogressBar;
+    private View emptyLayout;
+
+
     @Inject
     TopAlbumsPresenter mPresenter;
     TopAlbumsAdapter mAdapter;
     private OnFragmentInteractionListener mListener;
 
-    public TopAlbumsFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_top_albums, container, false);
-        ButterKnife.bind(this, view);
+        albumsRecyclerView=view.findViewById(R.id.rclr_albums);
+        mainprogressBar=view.findViewById(R.id.prgrs_main);
+        emptyLayout=view.findViewById(R.id.empty_layout);
         return view;
     }
 

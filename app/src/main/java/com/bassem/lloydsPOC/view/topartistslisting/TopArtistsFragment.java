@@ -3,14 +3,12 @@ package com.bassem.lloydsPOC.view.topartistslisting;
 import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.controller.TopArtistsAdapter;
 import com.bassem.lloydsPOC.models.Artist;
@@ -18,36 +16,23 @@ import com.bassem.lloydsPOC.view.BaseFragment;
 import com.bassem.lloydsPOC.view.topartistslisting.di.DaggerTopArtistsComponent;
 import com.bassem.lloydsPOC.view.topartistslisting.di.TopArtistsModule;
 import com.bassem.lloydsPOC.utils.Constants;
-
 import java.util.List;
-
 import javax.inject.Inject;
-
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link TopArtistsFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
+
 public class TopArtistsFragment extends BaseFragment implements TopArtistsView {
-    @BindView(R.id.rclr_artists)
-    RecyclerView artistsRecyclerView;
-    @BindView(R.id.prgrs_main)
-    ProgressBar mainProgressBar;
+
+
+    private RecyclerView artistsRecyclerView;
+    private ProgressBar mainProgressBar;
     private OnFragmentInteractionListener mListener;
-    @BindView(R.id.empty_layout)
-    View emptyLayout;
+    private View emptyLayout;
+
+
     @Inject
     TopArtistsPresenter mPresenter;
     TopArtistsAdapter mAdapter;
-
-    public TopArtistsFragment() {
-        // Required empty public constructor
-    }
 
     @Override
     protected void searchUserName(String userName) {
@@ -58,13 +43,14 @@ public class TopArtistsFragment extends BaseFragment implements TopArtistsView {
 
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_artists, container, false);
-        ButterKnife.bind(this, view);
+        artistsRecyclerView=view.findViewById(R.id.rclr_artists);
+        mainProgressBar   =view.findViewById(R.id.prgrs_main);
+        emptyLayout=view.findViewById(R.id.empty_layout);
         return view;
     }
 
@@ -152,12 +138,6 @@ public class TopArtistsFragment extends BaseFragment implements TopArtistsView {
         return new TopArtistsFragment();
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     */
     public interface OnFragmentInteractionListener {
 
         void onArtistClicked(Artist artist);
