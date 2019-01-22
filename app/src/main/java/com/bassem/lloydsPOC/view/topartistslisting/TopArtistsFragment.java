@@ -98,7 +98,7 @@ public class TopArtistsFragment extends BaseFragment implements TopArtistsView {
     public void updateData(List<Artist> topArtists) {
         if (mAdapter == null) {
             mAdapter = new TopArtistsAdapter(topArtists, getContext(), onArtistclickedListener);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
             artistsRecyclerView.setLayoutManager(linearLayoutManager);
             artistsRecyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
