@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topalbumslisting.di;
+package com.bassem.lloydsPOC.view.topalbumslisting.almubsdi;
 
 import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsInteractor;
 import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsInteractorImpl;

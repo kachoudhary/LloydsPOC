@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topartistslisting.di;
+package com.bassem.lloydsPOC.view.topartistslisting.artistsdi;
 
 import com.bassem.lloydsPOC.view.topartistslisting.TopARtistsPresenterImpl;
 import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsInteractor;
