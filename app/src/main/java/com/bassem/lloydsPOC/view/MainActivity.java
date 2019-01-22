@@ -12,6 +12,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.bassem.lloydsPOC.R;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements
     private ViewPager mViewPager;
     private MainPagerAdapter mAdapter;
     private EditText searchEditText;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         mTabLayout=findViewById(R.id.tl_main);
         mViewPager=findViewById(R.id.vp_main);
+        webView=findViewById(R.id.artist_webview);
         searchEditText=findViewById(R.id.edt_search);
         searchEditText.setOnClickListener(this::onClick);
         looseSearchEditTextFocus();
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements
     private void initializeFragments() {
         mAdapter = new MainPagerAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mAdapter);
-        mViewPager.setOffscreenPageLimit(3);
+        mViewPager.setOffscreenPageLimit(2);
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
@@ -86,12 +90,9 @@ public class MainActivity extends AppCompatActivity implements
 
     void openUrl(String url) {
         if (!TextUtils.isEmpty(url)) {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            }
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.setWebViewClient(new WebViewClient());
+            webView.loadUrl(url);
         }
     }
 

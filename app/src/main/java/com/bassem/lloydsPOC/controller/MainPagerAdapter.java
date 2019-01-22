@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
-    private static final int NUMBER_OF_ITEMS = 3;
+    private static final int NUMBER_OF_ITEMS = 2;
     private static final int TOP_ARTISTS_INDEX = 0;
     private static final int TOP_ALBUMS_INDEX = 1;
     private String topArtistsTitle;

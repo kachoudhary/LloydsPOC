@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
+    android:weightSum="2"
     tools:context="com.bassem.lloydsPOC.view.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <EditText
@@ -29,7 +30,7 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tl_main"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
             </com.google.android.material.tabs.TabLayout>
         </LinearLayout>
@@ -37,7 +38,13 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></androidx.viewpager.widget.ViewPager>
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_image_height"></androidx.viewpager.widget.ViewPager>
+    <WebView
+        android:visibility="visible"
+        android:id="@+id/artist_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </WebView>
 
 </LinearLayout>

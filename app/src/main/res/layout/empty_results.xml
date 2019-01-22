@@ -9,10 +9,13 @@
         android:id="@+id/empty_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_margin="@dimen/margin5"
-        android:src="@drawable/lonely" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin5"
+        android:layout_marginTop="@dimen/margin5"
+        android:layout_marginEnd="@dimen/margin5"
+        android:layout_marginBottom="@dimen/margin5"
+        android:src="@android:drawable/ic_delete" />
 
     <TextView
         android:layout_width="wrap_content"
