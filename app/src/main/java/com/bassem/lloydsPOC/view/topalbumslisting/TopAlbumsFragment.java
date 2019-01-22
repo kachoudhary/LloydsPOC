@@ -106,7 +106,7 @@ public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
         if (mAdapter == null) {
 
             mAdapter = new TopAlbumsAdapter(topAlbums, getContext(), mOnAlbumClickedListener);
-            LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
             albumsRecyclerView.setLayoutManager(layoutManager);
             albumsRecyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
