@@ -18,16 +18,13 @@ import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.controller.MainPagerAdapter;
 import com.bassem.lloydsPOC.models.Album;
 import com.bassem.lloydsPOC.models.Artist;
-import com.bassem.lloydsPOC.models.Track;
 import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsFragment;
 import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsFragment;
-import com.bassem.lloydsPOC.view.toptrackslisting.TopTracksFragment;
 
 
 public class MainActivity extends AppCompatActivity implements
         TopArtistsFragment.OnFragmentInteractionListener,
         TopAlbumsFragment.OnFragmentInteractionListener,
-        TopTracksFragment.OnFragmentInteractionListener,
         View.OnClickListener{
 
 
@@ -85,11 +82,6 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onAlbumClicked(Album album) {
         openUrl(album.getUrl());
-    }
-
-    @Override
-    public void onTrackClicked(Track track) {
-        openUrl(track.getUrl());
     }
 
     void openUrl(String url) {
