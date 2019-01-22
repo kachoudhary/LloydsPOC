@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topalbumslisting;
+package com.bassem.lloydsPOC.view.listing;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.controller.TopAlbumsAdapter;
 import com.bassem.lloydsPOC.models.Album;
 import com.bassem.lloydsPOC.view.BaseFragment;
-import com.bassem.lloydsPOC.view.topalbumslisting.almubsdi.DaggerTopAlbumsComponent;
-import com.bassem.lloydsPOC.view.topalbumslisting.almubsdi.TopAlbumsModule;
+import com.bassem.lloydsPOC.view.listing.almubsdi.DaggerTopAlbumsComponent;
+import com.bassem.lloydsPOC.view.listing.almubsdi.TopAlbumsModule;
 import com.bassem.lloydsPOC.utils.Constants;
 import java.util.List;
 import javax.inject.Inject;

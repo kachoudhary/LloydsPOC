@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topartistslisting;
+package com.bassem.lloydsPOC.view.listing;
 
 
 public interface TopArtistsPresenter {

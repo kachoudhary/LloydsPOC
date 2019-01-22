@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsFragment">
+    tools:context="com.bassem.lloydsPOC.view.listing.TopAlbumsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclr_albums"

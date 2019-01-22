@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topartistslisting;
+package com.bassem.lloydsPOC.view.listing;
 
 import com.bassem.lloydsPOC.models.TopArtistsResponse;
 

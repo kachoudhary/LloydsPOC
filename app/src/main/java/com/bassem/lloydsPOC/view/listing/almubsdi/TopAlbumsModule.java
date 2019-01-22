@@ -1,10 +1,10 @@
-package com.bassem.lloydsPOC.view.topartistslisting.artistsdi;
+package com.bassem.lloydsPOC.view.listing.almubsdi;
 
-import com.bassem.lloydsPOC.view.topartistslisting.TopARtistsPresenterImpl;
-import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsInteractor;
-import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsInteractorImpl;
-import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsPresenter;
-import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsView;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsInteractor;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsInteractorImpl;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsPresenter;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsPresenterImpl;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsView;
 import com.bassem.lloydsPOC.utils.Constants;
 
 import javax.inject.Singleton;
@@ -17,18 +17,19 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module
-public class TopArtistsModule {
-    TopArtistsView mView;
 
-    public TopArtistsModule(TopArtistsView view) {
+@Module
+public class TopAlbumsModule {
+    TopAlbumsView mView;
+
+    public TopAlbumsModule(TopAlbumsView view) {
         mView = view;
     }
 
-    // provides the view to create the top artists presenter
+    // provides the view to create the top albums presenter
     @Singleton
     @Provides
-    public TopArtistsView providesTopArtistsView() {
+    public TopAlbumsView providesTopAlbumsView() {
         return this.mView;
     }
 
@@ -46,7 +47,7 @@ public class TopArtistsModule {
         return RxJava2CallAdapterFactory.create();
     }
 
-    // provides a retrofit instance to create the top artists interactor
+    // provides a retrofit instance to create the top albums interactor
     @Singleton
     @Provides
     public Retrofit providesRetrofit(Converter.Factory converter, CallAdapter.Factory adapter) {
@@ -57,19 +58,19 @@ public class TopArtistsModule {
                 .build();
     }
 
-    // provides top artists interactor to make an instance of the presenter
+    // provides top albums interactor to make an instance of the presenter
     @Singleton
     @Provides
-    public TopArtistsInteractor providesTopArtistsInteractor(Retrofit retrofit) {
-        return new TopArtistsInteractorImpl(retrofit);
+    public TopAlbumsInteractor providesTopAlbumsInteractor(Retrofit retrofit) {
+        return new TopAlbumsInteractorImpl(retrofit);
     }
 
-    // provides top artists presenter
+    // provides top albums presenter
     @Singleton
     @Provides
-    public TopArtistsPresenter providesTopArtistsPresenter(TopArtistsView view, TopArtistsInteractor interactor) {
-        return new TopARtistsPresenterImpl(view, interactor);
+    public TopAlbumsPresenter providesTopAlbumsPresenter(TopAlbumsView view, TopAlbumsInteractor interactor) {
+        return new TopAlbumsPresenterImpl(view, interactor);
 
     }
+
 }
-

@@ -18,8 +18,8 @@ import com.bassem.lloydsPOC.R;
 import com.bassem.lloydsPOC.controller.MainPagerAdapter;
 import com.bassem.lloydsPOC.models.Album;
 import com.bassem.lloydsPOC.models.Artist;
-import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsFragment;
-import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsFragment;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsFragment;
+import com.bassem.lloydsPOC.view.listing.TopArtistsFragment;
 
 
 public class MainActivity extends AppCompatActivity implements

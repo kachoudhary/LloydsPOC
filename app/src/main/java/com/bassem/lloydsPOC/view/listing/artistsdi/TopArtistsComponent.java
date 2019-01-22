@@ -1,6 +1,6 @@
-package com.bassem.lloydsPOC.view.topartistslisting.artistsdi;
+package com.bassem.lloydsPOC.view.listing.artistsdi;
 
-import com.bassem.lloydsPOC.view.topartistslisting.TopArtistsFragment;
+import com.bassem.lloydsPOC.view.listing.TopArtistsFragment;
 
 import javax.inject.Singleton;
 

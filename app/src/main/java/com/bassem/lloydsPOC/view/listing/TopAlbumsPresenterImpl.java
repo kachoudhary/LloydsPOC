@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topalbumslisting;
+package com.bassem.lloydsPOC.view.listing;
 
 import com.bassem.lloydsPOC.models.Album;
 import com.bassem.lloydsPOC.models.TopAlbumsResponse;

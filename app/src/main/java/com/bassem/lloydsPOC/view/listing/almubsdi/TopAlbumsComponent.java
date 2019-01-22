@@ -1,6 +1,6 @@
-package com.bassem.lloydsPOC.view.topalbumslisting.almubsdi;
+package com.bassem.lloydsPOC.view.listing.almubsdi;
 
-import com.bassem.lloydsPOC.view.topalbumslisting.TopAlbumsFragment;
+import com.bassem.lloydsPOC.view.listing.TopAlbumsFragment;
 
 import javax.inject.Singleton;
 

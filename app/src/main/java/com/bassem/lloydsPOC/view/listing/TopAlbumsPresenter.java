@@ -1,4 +1,4 @@
-package com.bassem.lloydsPOC.view.topalbumslisting;
+package com.bassem.lloydsPOC.view.listing;
 
 public interface TopAlbumsPresenter {
     void onDestroy();
