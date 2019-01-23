@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.bassem.lloydsPOC.view.listing.TopArtistsFragment">
+    tools:context="com.example.lloydsPOC.view.listing.TopArtistsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rclr_artists"
