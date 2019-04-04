@@ -1,7 +1,7 @@
 package com.example.lloydsPOC.view.listing.almubsdi;
 
-import com.example.lloydsPOC.view.listing.TopAlbumsInteractor;
-import com.example.lloydsPOC.view.listing.TopAlbumsInteractorImpl;
+import com.example.lloydsPOC.view.listing.AlbumsInteractor;
+import com.example.lloydsPOC.view.listing.AlbumsInteractorClass;
 import com.example.lloydsPOC.view.listing.TopAlbumsPresenter;
 import com.example.lloydsPOC.view.listing.TopAlbumsPresenterImpl;
 import com.example.lloydsPOC.view.listing.TopAlbumsView;
@@ -61,14 +61,14 @@ public class TopAlbumsModule {
     // provides top albums interactor to make an instance of the presenter
     @Singleton
     @Provides
-    public TopAlbumsInteractor providesTopAlbumsInteractor(Retrofit retrofit) {
-        return new TopAlbumsInteractorImpl(retrofit);
+    public AlbumsInteractor providesTopAlbumsInteractor(Retrofit retrofit) {
+        return new AlbumsInteractorClass(retrofit);
     }
 
     // provides top albums presenter
     @Singleton
     @Provides
-    public TopAlbumsPresenter providesTopAlbumsPresenter(TopAlbumsView view, TopAlbumsInteractor interactor) {
+    public TopAlbumsPresenter providesTopAlbumsPresenter(TopAlbumsView view, AlbumsInteractor interactor) {
         return new TopAlbumsPresenterImpl(view, interactor);
 
     }

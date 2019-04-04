@@ -19,9 +19,9 @@ import io.reactivex.schedulers.Schedulers;
 public class TopARtistsPresenterImpl implements TopArtistsPresenter {
     Disposable mDisposable;
     TopArtistsView mView;
-    TopArtistsInteractor mInteractor;
+    ArtistsInteractor mInteractor;
 
-    public TopARtistsPresenterImpl(TopArtistsView view, TopArtistsInteractor interactor) {
+    public TopARtistsPresenterImpl(TopArtistsView view, ArtistsInteractor interactor) {
         this.mView = view;
         this.mInteractor = interactor;
     }

@@ -6,10 +6,10 @@ import com.example.lloydsPOC.models.network.TopAlbumsService;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 
-public class TopAlbumsInteractorImpl implements TopAlbumsInteractor {
+public class AlbumsInteractorClass implements AlbumsInteractor {
     Retrofit mRetrofit;
 
-    public TopAlbumsInteractorImpl(Retrofit retrofit) {
+    public AlbumsInteractorClass(Retrofit retrofit) {
         mRetrofit = retrofit;
     }
 

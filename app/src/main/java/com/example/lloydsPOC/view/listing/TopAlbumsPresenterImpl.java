@@ -15,10 +15,10 @@ import io.reactivex.schedulers.Schedulers;
 
 public class TopAlbumsPresenterImpl implements TopAlbumsPresenter {
     Disposable mDisposable;
-    TopAlbumsInteractor mInteractor;
+    AlbumsInteractor mInteractor;
     TopAlbumsView mView;
 
-    public TopAlbumsPresenterImpl(TopAlbumsView view, TopAlbumsInteractor interactor) {
+    public TopAlbumsPresenterImpl(TopAlbumsView view, AlbumsInteractor interactor) {
         this.mView = view;
         this.mInteractor = interactor;
     }

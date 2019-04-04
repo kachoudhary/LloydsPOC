@@ -2,19 +2,16 @@ package com.example.lloydsPOC.view;
 
 import android.content.Context;
 import com.google.android.material.tabs.TabLayout;
-
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.lloydsPOC.R;

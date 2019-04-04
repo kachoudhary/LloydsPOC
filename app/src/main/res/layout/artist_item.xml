@@ -36,7 +36,7 @@
                 android:layout_alignEnd="@+id/txt_plays"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="@dimen/margin5"
-                android:src="@drawable/play_icon" />
+                android:src="@drawable/play_ico" />
 
             <TextView
                 android:id="@+id/txt_plays"

@@ -2,15 +2,14 @@ package com.example.lloydsPOC.view.listing;
 
 import com.example.lloydsPOC.models.TopArtistsResponse;
 import com.example.lloydsPOC.models.network.TopArtistsService;
-
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 
 
-public class TopArtistsInteractorImpl implements TopArtistsInteractor {
+public class ArtistsInteractorClass implements ArtistsInteractor {
     Retrofit mRetrofit;
 
-    public TopArtistsInteractorImpl(Retrofit retrofit) {
+    public ArtistsInteractorClass(Retrofit retrofit) {
         mRetrofit = retrofit;
     }
 

@@ -5,6 +5,6 @@ import com.example.lloydsPOC.models.TopAlbumsResponse;
 import io.reactivex.Single;
 
 
-public interface TopAlbumsInteractor {
+public interface AlbumsInteractor {
     Single<TopAlbumsResponse> getTopAlbums(String userName, int limit, String apiKey);
 }

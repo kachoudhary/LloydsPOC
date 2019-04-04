@@ -1,8 +1,8 @@
 package com.example.lloydsPOC.view.listing.artistsdi;
 
 import com.example.lloydsPOC.view.listing.TopARtistsPresenterImpl;
-import com.example.lloydsPOC.view.listing.TopArtistsInteractor;
-import com.example.lloydsPOC.view.listing.TopArtistsInteractorImpl;
+import com.example.lloydsPOC.view.listing.ArtistsInteractor;
+import com.example.lloydsPOC.view.listing.ArtistsInteractorClass;
 import com.example.lloydsPOC.view.listing.TopArtistsPresenter;
 import com.example.lloydsPOC.view.listing.TopArtistsView;
 import com.example.lloydsPOC.utils.Constants;
@@ -60,14 +60,14 @@ public class TopArtistsModule {
     // provides top artists interactor to make an instance of the presenter
     @Singleton
     @Provides
-    public TopArtistsInteractor providesTopArtistsInteractor(Retrofit retrofit) {
-        return new TopArtistsInteractorImpl(retrofit);
+    public ArtistsInteractor providesTopArtistsInteractor(Retrofit retrofit) {
+        return new ArtistsInteractorClass(retrofit);
     }
 
     // provides top artists presenter
     @Singleton
     @Provides
-    public TopArtistsPresenter providesTopArtistsPresenter(TopArtistsView view, TopArtistsInteractor interactor) {
+    public TopArtistsPresenter providesTopArtistsPresenter(TopArtistsView view, ArtistsInteractor interactor) {
         return new TopARtistsPresenterImpl(view, interactor);
 
     }
