@@ -3,6 +3,7 @@ package com.example.lloydsPOC.view.listing;
 import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -106,7 +107,7 @@ public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
         if (mAdapter == null) {
 
             mAdapter = new TopAlbumsAdapter(topAlbums, getContext(), mOnAlbumClickedListener);
-            LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+            RecyclerView.LayoutManager layoutManager=new GridLayoutManager(getContext(),2);
             albumsRecyclerView.setLayoutManager(layoutManager);
             albumsRecyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
