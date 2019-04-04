@@ -1,18 +1,19 @@
 package com.example.lloydsPOC.view;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import com.google.android.material.tabs.TabLayout;
+
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements
     private ViewPager mViewPager;
     private MainPagerAdapter mAdapter;
     private EditText searchEditText;
-    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         mTabLayout=findViewById(R.id.tl_main);
         mViewPager=findViewById(R.id.vp_main);
-        webView=findViewById(R.id.artist_webview);
         searchEditText=findViewById(R.id.edt_search);
         searchEditText.setOnClickListener(this::onClick);
         looseSearchEditTextFocus();
@@ -90,9 +89,11 @@ public class MainActivity extends AppCompatActivity implements
 
     void openUrl(String url) {
         if (!TextUtils.isEmpty(url)) {
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl(url);
+            CustomTabsIntent.Builder builder=new CustomTabsIntent.Builder();
+            builder.setStartAnimations(this, R.anim.fui_slide_in_right, R.anim.fui_slide_out_left);
+            builder.setExitAnimations(this, R.anim.fui_slide_out_left, R.anim.fui_slide_in_right);
+            CustomTabsIntent customTabsIntent=builder.build();
+            customTabsIntent.launchUrl(this, Uri.parse(url));
         }
     }
 
@@ -102,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-
         }
     }
 
@@ -117,5 +117,4 @@ public class MainActivity extends AppCompatActivity implements
            looseSearchEditTextFocus();
        }
     }
-
 }
