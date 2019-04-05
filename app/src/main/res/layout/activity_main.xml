@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/colorAccent"
     android:focusableInTouchMode="true"
-    android:weightSum="2"
+    android:orientation="vertical"
     tools:context="com.example.lloydsPOC.view.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -15,6 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:orientation="vertical">
 
             <EditText
@@ -22,24 +23,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@android:drawable/ic_menu_search"
+                android:hint="@string/search_users_hint"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:maxLines="1"
-                android:hint="@string/search_users_hint"/>
+                android:maxLines="1" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tl_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </com.google.android.material.tabs.TabLayout>
+                android:layout_height="match_parent"
+                android:background="#3F51B5"></com.google.android.material.tabs.TabLayout>
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp">
 
     </androidx.viewpager.widget.ViewPager>
 </LinearLayout>

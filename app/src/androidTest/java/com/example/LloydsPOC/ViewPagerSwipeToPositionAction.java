@@ -10,12 +10,7 @@ import android.view.View;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.core.IsAnything;
-
 import static org.hamcrest.Matchers.anything;
-
-/**
- * Created by Bassem Samy on 6/18/2017.
- */
 
 public class ViewPagerSwipeToPositionAction implements ViewAction {
     private int mPosition;
