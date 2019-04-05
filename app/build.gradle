@@ -52,5 +52,26 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.1.0'
     implementation 'com.google.firebase:firebase-database:16.0.5'
     implementation 'com.google.firebase:firebase-storage:16.0.5'
+
+
+
+    testImplementation 'junit:junit:4.12'
+    //Mock web server
+    androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.6.0'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation ('com.android.support.test.espresso:espresso-contrib:2.2.2'){
+        exclude module: 'support-annotations'
+        exclude module: 'support-v4'
+        exclude module: 'support-v13'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'appcompat-v7'
+        exclude module: 'design'
+    }
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+
+
 }
 apply plugin: 'com.google.gms.google-services'
